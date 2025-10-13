@@ -1,0 +1,102 @@
+
+:root {
+  --color-bg: oklch(0.99 0 0);         
+  --color-fg: oklch(0.20 0 0);         
+  --brand:    oklch(0.65 0.15 250);
+  --muted:    oklch(0.92 0.01 270);
+
+  --radius: 12px;
+  --shadow-1: 0 6px 18px rgba(0,0,0,.06);
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+
+  --header-bg: var(--muted);
+  --header-fg: var(--color-fg);
+}
+
+.dark {
+  --color-bg: oklch(0.17 0 0);
+  --color-fg: oklch(0.99 0 0);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  margin: 0;
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+main, footer, button {
+  color: var(--color-fg);
+  border-color: var(--color-fg);
+}
+
+site-header {
+  display: block;
+  margin: 16px auto;
+  max-width: 1200px;
+  --header-bg: oklch(0.98 0.01 270);
+  --header-fg: oklch(0.17 0 0);
+  --link-fg: var(--header-fg);
+  --link-hover-fg: oklch(0.30 0.03 260);
+  --current-fg: var(--brand);
+  --header-radius: var(--radius);
+  --header-shadow: var(--shadow-1);
+}
+
+.dark site-header {
+  --header-bg: oklch(0.28 0.03 260);
+  --header-fg: oklch(0.97 0.02 250);
+  --link-fg: var(--header-fg);
+  --link-hover-fg: oklch(0.9 0.03 250);
+  --current-fg: oklch(0.95 0.02 260);
+  --header-shadow: 0 8px 22px rgba(0,0,0,.25);
+}
+
+site-header::part(container) {
+  border: 1px solid oklch(0.90 0 0);
+}
+
+site-header::part(title) {
+  letter-spacing: .2px;
+}
+
+site-header::part(link) {
+  font-weight: 500;
+}
+
+site-header::part(current) {
+  font-weight: 700;
+}
+
+
+
+/* ========== All Websites Shared Attributes ========== */
+main {
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  max-width: 1200px; /* Unidfied main container width */
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--color-bg);
+}
+
+button:hover {
+  box-shadow: 0px 0px 5px var(--color-fg);
+}
+
+#output {
+  width: 100%;
+  min-height: 10vh;
+  field-sizing: content;
+  pointer-events: none;
+}
+
+#button-group.deactivated{
+  pointer-events: none;
+}
