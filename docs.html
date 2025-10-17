@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>CSCI6313 - Final Documentation | IZHI CHEN</title>
+    <meta
+      name="description"
+      content="Documentation and demo for the CSCI6313 Final Project by IZHI CHEN. Includes screenshots, demo video, Lighthouse and WAVE accessibility reports."
+    />
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/docs.css" />
+    <script type="module" src="./assets/scripts/site-header.js" defer></script>
+  </head>
+
+  <body>
+    <site-header id="site-header" variant="dark">
+      <span slot="title">CSCI6313 - Final Documentation</slot>
+    </site-header>
+
+    <main>
+      <div class="top-content">
+        <div class="top-content-title">
+            <h1>Part 5: GitHub Hosting + Documentation</h1>
+            <h2>📄 Project Summary & Evidence</h2>
+            <h2>&#9888;Please run with Live Server&#9888;</h2>
+        </div>
+
+        <div class="top-content-text">
+            <nav>
+                <ol>
+                    <li><a href = "#section-part01">Part 01: Home page (desktop + mobile)</a></li>
+                    <li><a href = "#section-part02">Part 02: Form invalid + valid states</a></li>
+                    <li><a href = "#section-part03">Part 03: Map with 5 results + cards</a></li>
+                    <li><a href = "#section-part04">Part 04: Lighthouse/WAVE report</a></li>
+                    <li><a href = "#section-part05">Part 05: Deployed site (URL bar visible)</a></li>
+                    <li><a href = "#section-part06">Part 06: Deploy the code in GitHub.</a></li>
+                </ol>
+            </nav>
+        </div>
+      </div>
+
+      <div class="documentation">
+        <div class="documentation-content">
+          <h2>🎬 Final Demo Video</h2>
+          <video controls>
+            <source src="./docs/demo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <section id="section-part01" class="documentation-content">
+            <h2>🏠 Part 1: Home Page (Desktop + Mobile)</h2>
+
+            <div class="documentation-carousel">
+                <div class="documentation-slides">
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part01_desktop.png" target="_blank" alt="Home page on desktop view">
+                            <img src="./docs/screens/part01_desktop.png" alt="Home page on desktop view" />
+                        </a>
+                        <div class="caption">Home page - Desktop layout with responsive grid.</div> 
+                    </div>
+
+                    <div class="slide row">
+                        <a href="./docs/screens/part01_mobile01.png" target="_blank" alt="Home page on mobile view">
+                            <img src="./docs/screens/part01_mobile01.png" alt="Home page on mobile view" />
+                        </a>
+                        <div class="caption">Mobile view: Collapsed header and vertical layout.</div> 
+                    </div>
+
+                    <div class="slide row">
+                        <a href="./docs/screens/part01_mobile02.png" target="_blank" alt="Home page on mobile view">
+                            <img src="./docs/screens/part01_mobile02.png" alt="Home page on mobile view" />
+                        </a>
+                        <div class="caption">Mobile view: Simplified side content and vertical layout.</div> 
+                    </div>
+
+                    <div class="slide row">
+                        <a href="./docs/screens/part01_mobile03.png" target="_blank" alt="Home page on mobile view">
+                            <img src="./docs/screens/part01_mobile03.png" alt="Home page on mobile view" />
+                        </a>
+                        <div class="caption">Mobile view: Simplified footer and smaller typography.</div> 
+                    </div>
+
+                    <span class="control prev">❮</span>
+                    <span class="control next">❯</span>
+                </div>
+
+                <div class="documentation-indicators">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-part02" class="documentation-content">
+          <h2>🧾 Part 2: Form Validation (Invalid + Valid)</h2>
+            <div class="documentation-carousel">
+                <div class="documentation-slides">
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part02_invalid01.png" target="_blank" alt="Form invalid state example 01">
+                            <img src="./docs/screens/part02_invalid01.png" alt="Form invalid state example 01" />
+                        </a>
+                        <div class="caption">Contact page - Form invalid state example 01.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part02_invalid02.png" target="_blank" alt="Form invalid state example 02">
+                            <img src="./docs/screens/part02_invalid02.png" alt="Form invalid state example 02" />
+                        </a>
+                        <div class="caption">Contact view: Form invalid state example 02.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part02_invalid03.png" target="_blank" alt="Form invalid state example 03">
+                            <img src="./docs/screens/part02_valid01.png" alt="Form valid state example 01" />
+                        </a>
+                        <div class="caption">Contact view: Form invalid state example 01.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part02_valid02.png" target="_blank" alt="Form valid state example 02">
+                            <img src="./docs/screens/part02_valid02.png" alt="Form valid state example 02" />
+                        </a>
+                        <div class="caption">Contact view: Form valid state example 02.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part02_valid03.png" target="_blank" alt="Form valid state example 03">
+                            <img src="./docs/screens/part02_valid03.png" alt="Form valid state example 03" />
+                        </a>
+                        <div class="caption">Contact view: Form valid state example 03.</div> 
+                    </div>
+
+                    <span class="control prev">❮</span>
+                    <span class="control next">❯</span>
+                </div>
+
+                <div class="documentation-indicators">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>          
+        </section>
+
+        <section id="section-part03" class="documentation-content">
+          <h2>📍 Part 3: Map with 5 Results + Cards</h2>
+            <div class="documentation-carousel">
+                <div class="documentation-slides">
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part03.png" target="_blank" alt="Map page layout">
+                            <img src="./docs/screens/part03.png" alt="Map page layout" />
+                        </a>
+                        <div class="caption">Map page: page layout.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part03_autocomplete.png" target="_blank" alt="Map with search autocomplete">
+                            <img src="./docs/screens/part03_autocomplete.png" alt="Map with search autocomplete" />
+                        </a>
+                        <div class="caption">Map page: Search autocomplete.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part03_cards.png" target="_blank" alt="Map with top 5 results">
+                            <img src="./docs/screens/part03_cards.png" alt="Map with top 5 results and place cards" />
+                        </a>
+                        <div class="caption">Map page: Top 5 results and place cards.</div> 
+                    </div>
+
+                    <span class="control prev">❮</span>
+                    <span class="control next">❯</span>
+                </div>
+
+                <div class="documentation-indicators">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>          
+        </section>
+
+        <section id="section-part04" class="documentation-content">
+          <h2>🔍 Part 4: Lighthouse / WAVE Reports</h2>
+            <div class="documentation-carousel">
+                <div class="documentation-slides">
+
+                    <div class="slide column">
+                        <a href="./docs/screens/part04_Lighthouse.png" target="_blank" alt="Lighthouse accessibility and SEO report">
+                            <img src="./docs/screens/part04_Lighthouse.png" alt="Lighthouse accessibility and SEO report" />
+                        </a>
+                        <div class="caption">Doc page: Lighthouse accessibility and SEO report.</div> 
+                    </div>
+
+                    <div class="slide column">
+                        <img src="./docs/screens/part04-wave.png" alt="WAVE accessibility checker results" />
+                        <div class="caption">Doc page: WAVE accessibility checker results.</div> 
+                    </div>
+
+                    <span class="control prev">❮</span>
+                    <span class="control next">❯</span>
+                </div>
+
+                <div class="documentation-indicators">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-part05" class="documentation-content">
+          <h2>🌐 Part 5: Deployed Site (GitHub Pages)</h2>
+          <img src="./docs/screens/part05-deployed-site.png" alt="Screenshot showing deployed site with URL bar" />
+          <br />
+          <a href="https://yourusername.github.io/CSCI6313_Final_IZHICHEN/" target="_blank">
+            <button aria-label="Open deployed site">Visit Deployed Site</button>
+          </a>
+        </section>
+
+        <section id="section-part06" class="documentation-content">
+          <h2>🚀 Part 6: Deploy the code in GitHub.</h2>
+          <img src="./docs/screens/part06-github.png" alt="Screenshot showing deployed site with URL bar" />
+          <br />
+          <a href="https://github.com/chairchen/CSCI6313_Final_IZHICHEN" target="_blank">
+            <button aria-label="Open deployed site">Visit GitHub Pages</button>
+          </a>
+        </section>
+      </div>
+      
+    </main>
+
+    <footer>
+      <hr />
+      <small>
+        Copyright &copy; <em>IZHI CHEN</em>. All rights reserved.
+        <time datetime="2025-10-13">10/13/2025</time>
+      </small>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const carousels = document.querySelectorAll(".documentation-carousel");
+
+        carousels.forEach((carousel) => {
+            const scroller = carousel.querySelector(".documentation-slides");
+            const slides   = Array.from(carousel.querySelectorAll(".slide"));
+            const dots     = Array.from(carousel.querySelectorAll(".dot"));
+            const prevBtn  = carousel.querySelector(".prev");
+            const nextBtn  = carousel.querySelector(".next");
+
+            let index = 0;               
+            let programmatic = false;      
+            let scrollEndTimer = null;     
+
+            const centerLeftFor = (i) => {
+            const slide = slides[i];
+            const target =
+                slide.offsetLeft
+                - (scroller.clientWidth - slide.clientWidth) / 2;
+            return Math.max(0, Math.min(target, scroller.scrollWidth - scroller.clientWidth));
+            };
+
+            const goTo = (i) => {
+            const total = slides.length;
+            index = ((i % total) + total) % total;   
+            programmatic = true;                     
+            scroller.scrollTo({
+                left: centerLeftFor(index),
+                behavior: "smooth",
+            });
+            updateDots();
+            };
+
+            const updateDots = () => {
+            dots.forEach((d, i) => d.classList.toggle("active", i === index));
+            };
+
+            prevBtn?.addEventListener("click", () => goTo(index - 1));
+            nextBtn?.addEventListener("click", () => goTo(index + 1));
+            dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+
+            const onScrollSettled = () => {
+            if (programmatic) {
+                programmatic = false;
+            }
+            const center = scroller.scrollLeft + scroller.clientWidth / 2;
+            let nearest = 0;
+            let best = Infinity;
+            for (let i = 0; i < slides.length; i++) {
+                const sCenter = slides[i].offsetLeft + slides[i].clientWidth / 2;
+                const dist = Math.abs(sCenter - center);
+                if (dist < best) { best = dist; nearest = i; }
+            }
+            if (nearest !== index) {
+                index = nearest;
+                updateDots();
+            }
+            };
+
+            scroller.addEventListener("scroll", () => {
+            clearTimeout(scrollEndTimer);
+            scrollEndTimer = setTimeout(onScrollSettled, 100);
+            });
+            scroller.addEventListener?.("scrollend", onScrollSettled);
+
+            scroller.scrollLeft = centerLeftFor(index);
+            updateDots();
+
+            window.addEventListener("resize", () => {
+            scroller.scrollLeft = centerLeftFor(index);
+            }, { passive: true });
+        });
+        });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+:root {
+  --demo-image-column-height: 450px;
+  --demo-image-column-width: 500px;
+
+  --demo-image-row-height: 500px;
+  --demo-image-row-width: 300px;
+
+  --demo-slide-height: 500px;
+  --demo-slide-width: 500px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.top-content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 40%;
+  grid-template-areas:
+    "top-content-title    top-content-text";
+  gap: var(--space-4);
+  padding: 5%;
+  box-shadow: 1px -1px 1px 0.3px var(--blue-m);
+  border-radius: 10px;
+}
+
+.top-content-title { 
+  grid-area: top-content-title;
+}
+.top-content-text { 
+  grid-area: top-content-text;
+}
+
+
+
+.documentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+
+.documentation-content {
+  width: 100%;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.documentation-content h2 {
+  color: var(--blue-m);
+  margin-bottom: 1rem;
+}
+
+.documentation-content img,
+.documentation-content video {
+  width: 90%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+}
+
+.documentation-content video {
+  outline: none;
+}
+
+button {
+  margin-top: 1rem;
+  background: var(--blue-h);
+  color: oklch(0.98 0.01 270);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--blue-m);
+  outline: 1px solid var(--color-fg);
+}
+
+
+
+
+/* ******************************************************************************** */
+/********************************* carousel setting *********************************/
+
+.documentation-carousel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--blue-m);
+  overflow: hidden;
+}
+  .documentation-carousel .documentation-slides {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding: 1rem var(--demo-slide-width);
+    gap: 3rem;
+  }
+
+    .documentation-slides {
+      scrollbar-width: none;
+      -ms-overflow-style: none
+    }
+
+    .documentation-slides::-webkit-scrollbar {
+      display: none;
+    }
+
+    .documentation-slides .slide {
+      display: flex;
+      margin-right: 10px;
+      scroll-snap-align: center;
+      overflow: hidden;
+      height: var(--demo-slide-height);
+      flex: 0 0 var(--demo-slide-width);
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      background-color: white;
+      box-shadow: 0 2px 10px var(--color-fg);
+    }
+    .documentation-slides .caption { color: var(--blue-hx); font-size: 1em; font-style: italic; }
+    .documentation-slides .column { flex-direction: column; }
+    .documentation-slides .row { flex-direction: row;  }
+
+    .documentation-slides .column img {
+      height: var(--demo-image-column-height);
+      width: var(--demo-image-column-width);
+      object-fit: stretch;
+    }
+
+    .documentation-slides .row img {
+      height: var(--demo-image-row-height);
+      width: var(--demo-image-row-width);
+      object-fit: stretch;
+    }
+
+.documentation-carousel .documentation-indicators {
+  padding: 5px 0;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--blue-m);
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: var(--blue-m);
+}
+/* Position the "next button" to the right */
+.prev {  left: 0;  border-radius: 0 3px 3px 0; }
+.next {  right: 0;  border-radius: 3px 0 0 3px; }
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: var(--blue-h);
+}
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 1.5em;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+  background-color: var(--blue-m);
+}
+
+
+
+
+@media (max-width: 800px) {
+  .documentation-content img,
+  .documentation-content video {
+    width: 100%;
+  }
+  .top-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "top-content-title"
+      "top-content-text";
+  }
+  :root {
+    --demo-image-column-height: 250px;
+    --demo-image-column-width: 300px;
+
+    --demo-image-row-height: 300px;
+    --demo-image-row-width: 250px;
+
+    --demo-slide-height: 300px;
+    --demo-slide-width: 300px;
+  }
+}

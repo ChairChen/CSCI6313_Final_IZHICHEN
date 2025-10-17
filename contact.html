@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8" />
+        <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
+        
+        <title>CSCI6313 - Final IZHI CHEN</title>
+        <meta
+        name="description"
+        content="OCU CSCI6313 Final Project by IZHI CHEN. Explore Oklahoma City University's campus, programs, and send your feedback."
+        />
+
+        <link rel = "stylesheet" href = "./assets/styles/style.css" />
+        <link rel = "stylesheet" href = "./assets/styles/contact.css" />
+        <script type = "module" src = "./assets/scripts/contact.js" defer></script>
+        <script type = "module" src = "./assets/scripts/site-header.js" defer></script>
+    </head>
+    <body>
+
+        <site-header id="site-header" variant="dark">
+            <span slot="title">CSCI6313 - Final IZHI CHEN</slot>
+        </site-header>
+
+        <main>
+            <div class="top-content">
+                <h1>Part 2: Form with Validations</h1>
+                <h2>&#9888;Please run with Live Server&#9888;</h2>
+            </div>
+            <br>
+            <div class="contact-section">
+                <div class="form-title">
+                    <h3>Contact & Feedback</h3>
+                </div>
+                <form id="contact-form" action="#">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="firstName">First Name <span style="color: red">*</span></label>
+                            <input type="text" id="firstName" name="firstName" placeholder="firstName" >
+                            <p class="error" data-for="firstName"></p>
+                        </div>
+                        <div class="form-field">
+                            <label for="lastName">Last Name <span style="color: red">*</span></label>
+                            <input type="text" id="lastName" name="lastName" placeholder="lastName" >
+                            <p class="error" data-for="lastName"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="email">Email <span style="color: red">*</span></label>
+                            <input type="text" id="email" name="email" placeholder="you@example.com" >
+                            <p class="error" data-for="email"></p>
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone <span style="color: red">*</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="1234567890" >
+                            <p class="error" data-for="phone"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="topic">Topic</label>
+                            <select id="topic" name="topic" >
+                                <option value="general">General</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="support">Support</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
+                            <label for="PreferredContactTime">Preferred Contact Time <span style="color: red">*</span></label>
+                            <input type="datetime-local" id="PreferredContactTime" name="PreferredContactTime" >
+                            <p class="error" data-for="PreferredContactTime"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="message">Message <span style="color: red">*</span></label>
+                        <textarea id="message" name="message" maxlength="500" rows="4"  placeholder="Enter your message"></textarea>
+                        <p class="error" data-for="message"></p>
+                    </div>
+                    <div class="form-field-message-note">
+                        <small>10-1000 characters.</small>
+                    </div>
+
+                    <div class="form-actions right">
+                        <input type="reset" value="Reset">
+                        <input type="submit" value="Send Message">
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div class="change-information-section">
+
+                <div class="change-shipping-address-form">
+                    <div class="form-title">
+                        <h3>Change Shipping Address</h3>
+                    </div>
+                    <form id="change-shipping-address-form" action="#">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="addressLine1">Address Line 1 <span style="color: red">*</span></label>
+                                <input type="text" id="addressLine1" name="addressLine1" placeholder="addressLine1" >
+                                <p class="error" data-for="addressLine1"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-actions left">
+                            <input type="submit" value="Change Shipping Address">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="change-password-form">
+                    <div class="form-title">
+                        <h3>Change Password</h3>
+                    </div>
+                    <form id="change-password-form" action="#">
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="currentPassword">Current Password <span style="color: red">*</span></label>
+                                <div class="password-field">
+                                    <input type="password" id="currentPassword" name="currentPassword" >
+                                    <i class="eye" id="toggle-currentPassword" onclick="togglePassword('currentPassword')" title="Show Password">&#128064;</i>
+                                </div>
+                                <p class="error" data-for="currentPassword"></p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="newPassword">New Password <span style="color: red">*</span></label>
+                                <div class="password-field">
+                                    <input type="password" id="newPassword" name="newPassword" pattern=".{9,}" title="Must contain no more than 2 uppercase and 1 special characters, and at least 9 or more characters" >
+                                    <i class="eye" id="toggle-newPassword" onclick="togglePassword('newPassword')" title="Show Password">&#128064;</i>
+                                </div>
+                                <p class="error" data-for="newPassword"></p>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="confirmPassword">Comfirm Password <span style="color: red">*</span></label>
+                                <div class="password-field">
+                                    <input type="password" id="confirmPassword" name="confirmPassword" pattern=".{9,}" title="Must contain no more than 2 uppercase and 1 special characters, and at least 9 or more characters" >
+                                    <i class="eye" id="toggle-confirmPassword" onclick="togglePassword('confirmPassword')" title="Show Password">&#128064;</i>
+                                </div>
+                                <p class="error" data-for="confirmPassword"></p>
+                            </div>
+                        </div>
+                        <div class="form-actions left">
+                            <input type="submit" value="Change Password">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <hr>
+            <small>
+                Copyright &copy; <em>IZHI CHEN</em>. All rights reserved.
+                <time datetime="2025-10-13">10/13/2025</time>
+            </small>
+        </footer>
+
+    </body>
+</html>

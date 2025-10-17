@@ -1,0 +1,108 @@
+.top-content { 
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 1px -1px 1px 0.3px var(--blue-m);
+}
+
+#map{
+    border-radius: 10px; width: 100%; height: 500px;
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    gap: 30px;
+}
+
+.search-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.search-area .search-bar-note {
+    padding: 0 20px;
+}
+
+.search-area .search-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: 10px 0 0 10px;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    outline: none;
+    border: none;
+    box-shadow: 0px 0px 1px 1px var(--blue-m);
+}
+.search-bar input:focus {
+    border: 1px solid var(--blue);
+    box-shadow: inset 0px 0px 10px 2px var(--blue);
+}
+
+.search-bar button {
+    padding: 10px 14px;
+    color: white;
+    background-color: var(--blue);
+    border-radius: 0px 10px 10px 0px;
+    box-shadow: 0px 0px 1px 1px var(--blue-m);
+}
+
+.search-bar button:hover {
+    background-color: var(--blue-hx);
+}
+
+
+/* results area */
+
+.result-card {
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    min-width: 370px;
+    height: 150px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    box-shadow: 0px 0px 5px 1px var(--blue-m);
+    cursor: pointer;
+}
+.result-card:hover {
+    box-shadow: 0px 0px 20px 2px var(--blue-m);
+}
+.result-card h3 {
+    color: var(--blue);
+}
+
+.result-card .tag-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.result-card .address {
+    color: var(--blue-m);
+}
+
+.tag-group .tag {
+    text-align: center;
+    padding: 2px 10px;
+    border-radius: 10px;
+    color: var(--color-fg);
+    border: 1px solid var(--purple-h);
+    background-color: var(--purple);
+}

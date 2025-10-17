@@ -1,21 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset = "UTF-8" />
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0" />
-        <title>CSCI6313 - Final IZHI CHEN</title>
+
+        <!-- seo -->
+        <title>CSCI6313 - Final by IZHI CHEN</title>
+        <meta
+            name="description"
+            content="OCU CSCI6313 Final Project by IZHI CHEN. Explore Oklahoma City University's campus, programs, and visitor information. Learn about OCU events, contact admissions, and find your academic path."
+        />
+
         <link rel = "stylesheet" href = "./assets/styles/style.css" />
-        <script type = "module" src = "./assets/scripts/script.js" defer></script>
+        <link rel = "stylesheet" href = "./assets/styles/home.css" />
         <script type = "module" src = "./assets/scripts/site-header.js" defer></script>
     </head>
-    <!-- <body class="dark"> -->
     <body>
 
         <site-header id="site-header" variant="dark">
             <span slot="title">CSCI6313 - Final IZHI CHEN</slot>
         </site-header>
 
-        <main></main>
+        <main>
+            <div class="top-content">
+                <h1>Part 1: Web Page with CSS</h1>
+                <h2>&#9888;Please run with Live Server&#9888;</h2>
+            </div>
+
+            <div class="middle-content">
+                <img src="./assets/images/sculpture.png" alt="Venus de Milo Statue" />
+                <div class="middle-content-text">
+                    <h2>Venus de Milo</h2>
+                    <br>
+                    <p>
+                        <strong>Campus Visit and Events Manager</strong>
+                        <br>
+                        <ul>
+                            <li><u>izhi.chen@my.okcu.edu</u></li>
+                            <li>405-208-5678</li>
+                            <li>Territory: All informative events & compus visits</li>
+                        </ul>
+                    </p>
+                    <br>
+                    <button type="button" aria-label="Visit Campus Page">VISIT PAGE</button>
+                </div>
+                <span class="middle-content-flag"></span>
+            </div>
+
+            <div class="bottom-content">
+                <h2>Contact OCU Visitor Relations!</h2>
+                <br>
+                <address>
+                    <em>
+                        <u>visitocu@my.okcu.edu</u>
+                        <br>
+                        800-633-7242, ext. 4
+                        <br>
+                        <u>405-208-5345</u>
+                    </em>
+                </address>
+                <br>
+                <button type="button" aria-label="View map and get directions">View our map and get directions!</button>
+            </div>
+
+            <div class="side-content">
+                <br>
+                <div class="side-content-title">
+                    &#128248; All the images are from 
+                    <strong>
+                        <a href="https://www.freepik.com/free-photos-vectors/statue-png" target="_blank" rel="noopener noreferrer">Freepik</a>
+                    </strong>
+                </div>
+                <br>
+                <figure>
+                    <img src="./assets/images/sculpture02.png" alt="The Stoic Statue symbolizing wisdom and perseverance" />
+                    <figcaption>
+                        <span class="side-content-quote">❝</span>
+                        <strong>OCU taught me perseverance. Our professors teach us how to be adults with training wheels. They're ready to help you.❞</strong>
+                        <br><br><br>
+                        <strong>Marcus Aurelius</strong>
+                        <br>
+                        <em>Flute Performancce alumna</em>
+                    </figcaption>
+                </figure>
+                <br>
+                <div class="side-content-form" aria-labelledby="degree-finder-title">
+                    <strong>DEGREE FINDER</strong>
+                    <h2>EXPLORE PROGRAMS</h2>
+                    <form>
+                        <label for="search">Find your passion:</label>
+                        <br>
+                        <input type="text" id="search" name="search" placeholder="Search for a program" required/>
+                        <br>
+                        <button type="submit" aria-label="Search for academic program">GO!</button>
+                    </form>
+                </div>
+            </div>
+        </main>
         
         <footer>
             <hr>

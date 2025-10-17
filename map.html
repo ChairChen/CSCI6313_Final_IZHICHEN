@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSCI6313 - Final IZHI CHEN</title>
+    <meta
+    name="description"
+    content="OCU CSCI6313 Final Project by IZHI CHEN. Explore Top 5 places in Oklahoma City."
+    />
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <link rel="stylesheet" href="./assets/styles/map.css" />
+    <script type = "module" src = "./assets/scripts/map.js" defer></script>
+    <script type = "module" src = "./assets/scripts/site-header.js" defer></script>
+  </head>
+  <body>
+
+    <site-header id="site-header" variant="dark">
+        <span slot="title">CSCI6313 - Final IZHI CHEN</slot>
+    </site-header>
+    
+    <main>
+        <div class="top-content">
+            <h1>Part 3: Google Maps with Top 5 Places</h1>
+            <h2>&#9888;Please run with Live Server&#9888;</h2>
+            <h2>&#9888;Please provide your own API Key in this file&#9888;</h2>
+        </div>
+
+        <br>
+
+        <!-- search bar -->
+        <div class="search-area">
+            <div class="search-bar">
+                <input
+                    id="search-input"
+                    type="text"
+                    placeholder="Search for a place or key word(e.g. Oklahoma City University)"
+                    aria-label="place search"
+                />
+                <button id="search-button" type="button">Search</button>
+            </div>
+            <div class="search-bar-note"><small>
+                &#128226;Tip: pick a suggestion from autocomplete or type a query and click Search. Results are biased to the current map view.
+            </small></div>
+        </div>
+
+        <!-- maps -->
+        <div id="map"></div>
+        <br>
+        <!-- result -->
+        <div id="results"></div>
+
+    </main>
+
+    <footer>
+        <hr>
+        <small>
+            Copyright &copy; <em>IZHI CHEN</em>. All rights reserved.
+            <time datetime="2025-10-13">10/13/2025</time>
+        </small>
+        </footer>
+    </footer>
+
+    <!-- Please replace YOUR_API_KEY_HERE with your Google Maps API Key；reminder: Maps JavaScript API and Places API are required -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6vGGwkhiCdbJyTk78yzpVloACMakiczI&libraries=places&callback=initMap"
+      async
+      defer
+    ></script>
+  </body>
+</html>

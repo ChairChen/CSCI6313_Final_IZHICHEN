@@ -1,10 +1,10 @@
 // define style sheet
 const stylesheet = new CSSStyleSheet();
 stylesheet.replaceSync(`
-  /* ========== 可由宿主覆寫的設計代幣（預設值） ========== */
+  /* ========== default styles ========== */
   :host {
     /* size & layout */
-    --header-max-width: 1100px;
+    --header-max-width: 1200px;
     --header-padding-block: 12px;
     --header-padding-inline: 16px;
     --header-gap: 12px;
@@ -24,7 +24,7 @@ stylesheet.replaceSync(`
 
     display: block;
     color: var(--header-fg);
-    background: transparent; /* 宿主本身背景（通常透明），header 會有自己的背景 */
+    background: transparent;
   }
 
   /* variant example: <site-header variant="dark"> switch theme */
@@ -55,6 +55,7 @@ stylesheet.replaceSync(`
 
   /* layout side by side */
   .row {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -116,6 +117,42 @@ stylesheet.replaceSync(`
     outline-offset: 2px;
   }
 
+
+  /* ========== responsive menu ========== */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  @media (max-width: 800px) {
+    nav {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--header-bg);
+      position: absolute;
+      right: 0px;
+      top: 56px;
+      border-radius: var(--header-radius);
+      box-shadow: var(--header-shadow);
+      padding: 12px;
+      animation: fadeIn .2s ease;
+    }
+    nav.open {
+      display: flex;
+    }
+    .menu-toggle {
+      display: inline-block;
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
  /* theme toggle button */
  .theme {
     position: relative;
@@ -149,18 +186,18 @@ stylesheet.replaceSync(`
  .theme-button::before{
     position: absolute;
     left: 0;
+    top: 0;
     content: " ";
-    height: 70%;
-    width: 30%;
-    margin: 5% 7%;
+    height: 100%;
+    width: 50%;
     border-radius: 50em;
-    border: 0.5px solid var(--header-fg);
-    box-shadow: 0 0 2px 0 var(--header-fg);
+    border: 0.5px none var(--header-fg);
+    box-shadow: 0 0 35px 5px var(--header-fg);
     transition: 0.2s ease-in-out;
  }
 
  input[id="theme"]:checked + .theme-button::before{
-    left: 50%;
+    left: 48%;
  }
 
 `);
@@ -178,18 +215,33 @@ class SiteHeader extends HTMLElement {
           <div>
             <h3 part="title"><slot name="title">My Awesome Site-Header</slot></h3>
           </div>
+
+          <span class="menu-toggle" id="menuToggle">☰</span>
+
+
           <nav part="nav">
           
             <a part="link"
                data-route="/index.html"
                href="index.html">Home</a>
 
+            <a part="link"
+               data-route="/contact.html"
+               href="contact.html">Contact</a>
+
+            <a part="link"
+               data-route="/map.html"
+               href="map.html">Map</a>
+               
+            <a part="link"
+               data-route="/docs.html"
+               href="docs.html">Docs</a>
 
             <label class="theme">
               <input type="checkbox" id="theme" name="theme" />
               <span class="theme-button">
-                <i>L</i>
-                <i>D</i>
+                <span>&#127774;</span>
+                <span>&#127770;</span>
               </span>
             </label>
           </nav>
@@ -210,8 +262,9 @@ class SiteHeader extends HTMLElement {
     links.forEach(a => {
       // Normalize trailing slashes for matching
       const want = (a.getAttribute('data-route') || '').replace(/\/+$/, '');
+      const alternate = '/CSCI6313_Final_IZHICHEN' + (a.getAttribute('data-route') || '').replace(/\/+$/, '');
       const have = (currentpath || '').replace(/\/+$/, '');
-      if (want === have) a.setAttribute('aria-current', 'page');
+      if (want === have || alternate === have) a.setAttribute('aria-current', 'page');
     });
 
     // let theme toggle button control parent DocumentFragment theme
@@ -224,6 +277,14 @@ class SiteHeader extends HTMLElement {
       } else {
         console.log('Element has been removed from the DocumentFragment');
       }
+    });
+
+    
+    // menu toggle for small screens
+    const toggle = this.shadowRoot.getElementById("menuToggle");
+    const nav = this.shadowRoot.querySelector("nav");
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
     });
   }
 }

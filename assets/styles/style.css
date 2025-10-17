@@ -1,41 +1,62 @@
 
 :root {
   --color-bg: oklch(0.99 0 0);         
-  --color-fg: oklch(0.20 0 0);         
+  --color-fg: oklch(0.20 0 0);       
   --brand:    oklch(0.65 0.15 250);
   --muted:    oklch(0.92 0.01 270);
+  --danger:   oklch(0.65 0.25 40);
+
+  --purple:   oklch(96.461% 0.01673 271.249);
+  --purple-h: oklch(39.689% 0.17853 277.559);
+  --green:    oklch(74.603% 0.15262 138.351);
+  --blue:     oklch(60.483% 0.21664 257.23);
+  --blue-l:   oklch(93.07% 0.03928 227.854);
+  --blue-m:   oklch(49.1% 0.11234 243.584);
+  --blue-h:   oklch(34.538% 0.07339 246.597);
+  --blue-hx:  oklch(26.934% 0.1234 264.401);
 
   --radius: 12px;
   --shadow-1: 0 6px 18px rgba(0,0,0,.06);
+  --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
 
   --header-bg: var(--muted);
   --header-fg: var(--color-fg);
+
 }
 
 .dark {
   --color-bg: oklch(0.17 0 0);
   --color-fg: oklch(0.99 0 0);
+  --blue-l:   oklch(89.569% 0.09783 208.638);
+  --blue-m:   oklch(65.144% 0.16039 243.92);
+  /* --green:   oklch(60.784% 0.15262 138.351); */
+  --green:   oklch(67.106% 0.18632 138.924);
+  --purple:   oklch(42.984% 0.06551 269.123);
 }
 
-* { box-sizing: border-box; }
+* { box-sizing: border-box; margin: 0; }
+html { height: 100%;}
+body { min-height: 100%; width: 100%; padding: 10px; }
 html, body {
   background: var(--color-bg);
   color: var(--color-fg);
-  margin: 0;
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 
-main, footer, button {
+footer { text-align: center; font-size: 0.9em; position: fixed; bottom: 0; left: 0; right: 0; background: var(--color-bg); }
+main, footer {
   color: var(--color-fg);
   border-color: var(--color-fg);
 }
 
+
+/* ========== All Websites Shared Site Header Attributes ========== */
 site-header {
   display: block;
-  margin: 16px auto;
+  margin: auto;
   max-width: 1200px;
   --header-bg: oklch(0.98 0.01 270);
   --header-fg: oklch(0.17 0 0);
@@ -72,31 +93,25 @@ site-header::part(current) {
 }
 
 
-
 /* ========== All Websites Shared Attributes ========== */
 main {
   width: 100%;
-  padding: 20px;
+  padding: 20px 0;
   margin: auto;
+  margin-bottom: 40px;
   max-width: 1200px; /* Unidfied main container width */
+  color: var(--blue-m);
 }
 
 button {
   cursor: pointer;
-  background-color: var(--color-bg);
+  background-color: var(--green);
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  font-weight: bold;
+  color: var(--color-fg);
 }
 
 button:hover {
   box-shadow: 0px 0px 5px var(--color-fg);
-}
-
-#output {
-  width: 100%;
-  min-height: 10vh;
-  field-sizing: content;
-  pointer-events: none;
-}
-
-#button-group.deactivated{
-  pointer-events: none;
 }

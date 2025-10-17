@@ -1,0 +1,167 @@
+.top-content { 
+    padding: 5%;
+    border-radius: 10px;
+    box-shadow: 1px -1px 1px 0.3px var(--blue-m);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; 
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 1px -1px 1px 0.3px var(--blue-m);
+    border-radius: 0px 0px 10px 10px;
+    padding: 20px;
+    gap: 15px;
+}
+
+.form-title {
+    text-align: left;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: var(--blue-hx);
+    box-shadow: 1px -1px 1px 0.3px var(--blue-hx);
+    border-radius: 10px 10px 0px 0px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-field label{
+    text-align: left;
+}
+
+
+.error {
+    min-height: 1.2em;
+    font-size: 13px;
+    color: var(--danger);
+}
+
+.is-invalid {
+    border-color: var(--danger) !important;
+    box-shadow: none;
+}
+
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    border-radius: 5px;
+    background-color: var(--color-bg);
+    box-sizing: border-box;
+    color: var(--color-fg);
+}
+
+.form-field-message-note {
+    text-align: left;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 0.9em;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.form-actions.right {
+    justify-content: flex-end;
+}
+
+.form-actions.left {
+    justify-content: flex-start;
+}
+
+
+.form-actions input {
+    padding: 10px 10px;
+    border-radius: 10px;
+    border: 1px solid #555;
+    cursor: pointer;
+}
+.form-actions input[type="submit"] {
+    background-color: var(--blue);
+    color: white;
+    border-color: #333;
+}
+.form-actions input[type="submit"]:hover {
+    background-color: var(--blue-hx);
+}
+.form-actions input[type="reset"] {
+    background-color: transparent;
+    border: 1px solid var(--color-fg);
+    color: var(--color-fg);
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.1);
+}
+.form-actions input[type="reset"]:hover {
+    background-color: #6b6b6b;
+}
+
+.change-information-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "change-shipping-address-form    change-password-form";
+    gap: var(--space-4);
+}
+
+.change-shipping-address-form {
+    grid-area: change-shipping-address-form;
+}
+.change-password-form {
+    grid-area: change-password-form;
+}
+
+.change-password-form .password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.change-password-form .password-field .eye {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-fg);
+    font-size: 0.9em;
+}
+
+
+
+@media (max-width: 800px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .change-information-section {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "change-shipping-address-form"
+            "change-password-form";
+    }
+
+    .contact-page-content-container form {
+        max-width: 90%;
+    }
+}
