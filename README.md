@@ -43,12 +43,9 @@ All visual evidence and testing reports are located in the `/docs/` folder.
 ├── screens/
 │ ├── part01_home_desktop.png
 │ ├── part01_home_mobile.png
-│ ├── part02_form_invalid.png
-│ ├── part02_form_valid.png
-│ ├── part03_map_results.png
-│ ├── part04_lighthouse.png
-│ ├── part04_wave.png
-│ └── part05_deployed_site.png
+│ ├── ...
+│ ├── part05_githubPage.png
+│ └── part06_github.png
 └── demo.mp4 ← recorded walkthrough of all features
 ```
 
@@ -75,8 +72,8 @@ You can view it here (example link):
 ---
 
 ## ✅ Accessibility & SEO Reports
-- Lighthouse score: *Accessibility 100 / SEO 100*  
-- WAVE report: *0 Errors, 0 Contrast Issues*  
+- Lighthouse score: *Accessibility 94 / SEO 100*  
+- WAVE report: *0 Errors, 0 Alerts, 0 Contrast Issues*  
 - All buttons and interactive elements have accessible names and visible focus states.
 
 ---

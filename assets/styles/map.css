@@ -85,6 +85,9 @@
 }
 .result-card h3 {
     color: var(--blue);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .result-card .tag-group {
