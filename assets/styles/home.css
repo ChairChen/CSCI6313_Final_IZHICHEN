@@ -24,6 +24,9 @@ main {
     box-shadow: 1px -1px 1px 0.3px var(--blue-m);
     border-radius: 10px;
 }
+.middle-content a { 
+    color: var(--blue-m);
+}
 .middle-content img {
     height: 500px;
     width: 50%;
@@ -48,6 +51,9 @@ main {
     color: var(--color-bg);
     padding: 5%;
     border-radius: 10px;
+}
+.bottom-content a { 
+    color: var(--color-bg);
 }
 
 .side-content { 
